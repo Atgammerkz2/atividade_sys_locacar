@@ -23,6 +23,7 @@ public class Locacao {
     private Float valorTotal;
     private String status;
 
-//    @OneToMany(mappedBy = "locacao", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Veiculo> veiculos;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "locacao_id")
+    private List<Veiculo> veiculos;
 }

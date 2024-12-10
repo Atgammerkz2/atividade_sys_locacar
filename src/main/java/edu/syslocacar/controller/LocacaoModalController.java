@@ -129,9 +129,9 @@ public class LocacaoModalController implements Initializable {
             txtValorCaucao.setText(locacao.getValorCaucao().toString());
             txtValorTotal.setText(locacao.getValorTotal().toString());
             txtStatus.setText(locacao.getStatus());
-//            this.locacao.getVeiculos().stream().forEach(v -> {
-//               tbVeiculos.getSelectionModel().select(v);
-//            });
+            this.locacao.getVeiculos().stream().forEach(v -> {
+               tbVeiculos.getSelectionModel().select(v);
+            });
         }
     }
 
@@ -159,7 +159,7 @@ public class LocacaoModalController implements Initializable {
         this.locacao.setValorTotal(Float.parseFloat(txtValorTotal.getText()));
         this.locacao.setStatus(txtStatus.getText());
 
-//        List<Veiculo> veiculosSelecionados = tbVeiculos.getSelectionModel().getSelectedItems();
-//        this.locacao.setVeiculos(veiculosSelecionados);
+        List<Veiculo> veiculosSelecionados = tbVeiculos.getSelectionModel().getSelectedItems();
+        this.locacao.setVeiculos(veiculosSelecionados);
     }
 }

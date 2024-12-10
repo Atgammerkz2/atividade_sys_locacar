@@ -44,7 +44,7 @@ public class LocacaoController implements Initializable {
     @FXML
     TableColumn <Veiculo, String> columnStatus;
     @FXML
-    TableColumn <Veiculo, List<Integer>> columnVeiculos;
+    TableColumn <Veiculo, List<Long>> columnVeiculos;
     @FXML
     Button btnNovo;
 
@@ -71,7 +71,6 @@ public class LocacaoController implements Initializable {
         columnValorCaucao.setCellValueFactory(new PropertyValueFactory<>("valorCaucao"));
         columnValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
         columnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        columnVeiculos.setCellValueFactory(new PropertyValueFactory<>("id_veiculos"));
 
         tbLocacao.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {

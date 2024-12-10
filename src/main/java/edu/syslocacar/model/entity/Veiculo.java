@@ -17,11 +17,11 @@ public class Veiculo {
     private String placa;
     @Setter
     private String status;
-//    @Getter
-//    @Setter
-//    @ManyToOne
-//    @JoinColumn(name = "locacao_id")
-//    private Locacao locacao;
+    @Getter
+    @Setter
+    @ManyToOne
+    @JoinColumn(name = "locacao_id", insertable = false, updatable = false)
+    private Locacao locacao;
 
     // CONSTRUTOR
     public Veiculo() {
