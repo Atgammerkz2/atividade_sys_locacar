@@ -59,6 +59,7 @@ public class LocacaoController implements Initializable {
         this.veiculoServices = new VeiculoServices();
         this.locacaoServices = new LocacaoServices();
         iniciarGUI();
+        updateTableView();
     }
 
     public void iniciarGUI(){
@@ -70,7 +71,7 @@ public class LocacaoController implements Initializable {
         columnValorCaucao.setCellValueFactory(new PropertyValueFactory<>("valorCaucao"));
         columnValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
         columnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        columnVeiculos.setCellValueFactory(new PropertyValueFactory<>("veiculos"));
+        columnVeiculos.setCellValueFactory(new PropertyValueFactory<>("id_veiculos"));
 
         tbLocacao.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {
@@ -93,6 +94,7 @@ public class LocacaoController implements Initializable {
             controller.setVeiculoServices(this.veiculoServices);
             controller.setLocacaoServices(this.locacaoServices);
             controller.setLocacao(this.locacao);
+            controller.updateTableView();
             Stage modal = new Stage();
             modal.setTitle(title);
             modal.setScene(new Scene(root));
@@ -119,7 +121,7 @@ public class LocacaoController implements Initializable {
     @FXML
     public void onBtnNovoAction(){
         this.locacao = null;
-        modalView("Cadastrar Locacao", FXMLPathProvider.getLocacaoModalViewPath());
+        modalView("Cadastrar Locacao", "C:\\Users\\Michael\\Documents\\Faculdade\\POO3\\java-syslocacar\\src\\main\\java\\edu\\syslocacar\\view\\LocacaoModalView.fxml");
         updateTableView();
     }
 }

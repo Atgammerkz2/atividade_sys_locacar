@@ -1,5 +1,6 @@
 package edu.syslocacar.utils;
 
+import edu.syslocacar.model.entity.Locacao;
 import edu.syslocacar.model.entity.Veiculo;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -50,6 +51,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory(StandardServiceRegistry registry) {
         return new MetadataSources(registry)
                 .addAnnotatedClass(Veiculo.class)
+                .addAnnotatedClass(Locacao.class)
                 // Add other entity classes here
                 .buildMetadata()
                 .buildSessionFactory();

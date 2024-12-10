@@ -22,7 +22,7 @@ module edu.syslocacar {
     //requires org.hibernate.orm.core;
     //requires jakarta.persistence;
 
-    opens edu.syslocacar.model.entity to org.hibernate.orm.core;
+    opens edu.syslocacar.model.entity;
     exports edu.syslocacar.model.entity;
     opens edu.syslocacar.controller;
     exports edu.syslocacar;

@@ -1,13 +1,11 @@
 package edu.syslocacar.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -21,8 +19,10 @@ public class Locacao {
     private Long id;
     private Date dataLocacao;
     private Date dataDevolucao;
-    private float valorCaucao;
-    private float valorTotal;
+    private Float valorCaucao;
+    private Float valorTotal;
     private String status;
-    private List<Veiculo> veiculos;
+
+//    @OneToMany(mappedBy = "locacao", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Veiculo> veiculos;
 }

@@ -1,6 +1,7 @@
 package edu.syslocacar.model.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.Setter;
 
 @Entity
@@ -16,6 +17,11 @@ public class Veiculo {
     private String placa;
     @Setter
     private String status;
+//    @Getter
+//    @Setter
+//    @ManyToOne
+//    @JoinColumn(name = "locacao_id")
+//    private Locacao locacao;
 
     // CONSTRUTOR
     public Veiculo() {
